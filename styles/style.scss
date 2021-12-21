@@ -56,34 +56,29 @@ a {
 
     &__wrap {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
         align-items: center;
-        @include b(tablet) {
+        @include b(mobile) {
             display: block;
             text-align: center;
         }
     }
 
     &__img {
-        max-width: 300px;
+        max-width: 150px;
         border-radius: 50%;
-    
-        &-box {
-            width: 35%;
-            margin-left: 100px;
-            @include b(tablet) {
+        margin-left: 100px;
+            @include b(mobile) {
                 width: 100%;
                 margin-left: 0;
             }
-        }
     }
 
     &__caption {
-        margin-left: 100px;
+        margin-left: 50px;
         font-weight: 500;
         font-size: 50px;
-        width: 65%;
-        @include b(tablet) {
+        @include b(mobile) {
             width: 100%;
             margin-left: 0;
         }
@@ -102,7 +97,7 @@ a {
 
     &__info {
         padding: 25px 100px;
-        width: 35%;
+        width: 45%;
         background-color: $secondary-color;
         color: $grey-color;
         @include b(tablet) {
@@ -136,7 +131,6 @@ a {
 
     &__body {
         padding: 25px 100px;
-        width: 65%;
         @include b(tablet) {
             width: 100%;
         }
@@ -159,4 +153,54 @@ a {
 
         }
     }
+}
+
+.footer{
+    padding: 50px 100px;
+    background-color: $primary-color;
+    color: $secondary-color;
+        @include b(tablet) {
+            width: 100%;
+        }
+        @include b(mobile) {
+            padding: 25px 50px;
+        }
+        @include b(mobile-sm) {
+            padding: 25px;
+        }
+    
+        &__download {
+            display: flex;
+            align-items: center;
+            @include b(mobile) {
+                display: block;
+            }
+
+            &-text {
+            font-size: 24px;
+            @include b(mobile) {
+                margin-bottom: 30px;
+                margin-left: 0;
+            }
+            }
+
+            &-link {
+                display: inline-block;
+                font-size: 24px;
+                padding: 5px 20px;
+                margin-left: 50px;
+                border: 1px solid currentColor;
+                border-radius: 10px;
+                @include b(mobile) {
+                    margin-bottom: 30px;
+                    margin-left: 0;
+                }
+
+                &:hover {
+                    background-color: $transparant-color;
+                    border: 1px solid $transparant-color;
+                }
+            }
+        }
+
 }
