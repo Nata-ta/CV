@@ -1,0 +1,42 @@
+@import '../common/vars';
+
+.head {
+    padding: 25px 0;
+    background-color: $primary-color;
+    color: $secondary-color;
+
+    &__wrap {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include b(mobile) {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    &__img {
+        max-width: 120px;
+        border-radius: 50%;
+        margin-left: 100px;
+        box-shadow: 3px 2px 10px 0px;
+
+        @include b(mobile) {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    &__caption {
+        margin-left: 50px;
+        font-weight: 500;
+        font-size: 50px;
+        text-shadow: 3px 2px 8px;
+
+        @include b(mobile) {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}

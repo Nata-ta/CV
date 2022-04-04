@@ -1,0 +1,78 @@
+@import '../common/vars';
+
+.about {
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+
+        @include b(tablet) {
+            display: block;
+        }
+    }
+
+    &__info {
+        padding: 25px 100px;
+        width: 45%;
+        background-color: $secondary-color;
+        color: $grey-color;
+
+        @include b(tablet) {
+            width: 100%;
+        }
+
+        @include b(mobile) {
+            padding: 25px 50px;
+        }
+
+        @include b(mobile-sm) {
+            padding: 25px;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 34px;
+        border-bottom: 5px solid $primary-color;
+        margin-bottom: 30px;
+    }
+
+    &__list {
+        margin: 0 25px 25px 0;
+
+        &-link {
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    &__body {
+        padding: 25px 100px;
+
+        @include b(tablet) {
+            width: 100%;
+        }
+
+        @include b(mobile) {
+            padding: 25px 50px;
+        }
+
+        @include b(mobile-sm) {
+            padding: 25px;
+        }
+    }
+
+    &__text {
+        font-size: 24px;
+        margin-bottom: 30px;
+
+        &-name {
+            display: block;
+            font-weight: bold;
+            font-size: 24px;
+
+        }
+    }
+}
