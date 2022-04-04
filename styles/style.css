@@ -85,7 +85,7 @@ a {
   margin-left: 50px;
   font-weight: 500;
   font-size: 50px;
-  text-shadow: 3px 2px 8px;
+  color: rgba(255, 255, 255, 0.8);
 }
 @media (max-width: 767px) {
   .head__caption {
@@ -133,8 +133,23 @@ a {
 .about__list {
   margin: 0 25px 25px 0;
 }
-.about__list-link:hover {
+.about__list-link {
+  display: inline-block;
   color: #5a996a;
+  position: relative;
+}
+.about__list-link::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 0;
+  top: 23px;
+  left: 0;
+  background-color: currentColor;
+  transition: all 0.3s;
+}
+.about__list-link:hover:before {
+  width: 100%;
 }
 .about__body {
   padding: 25px 100px;
@@ -184,17 +199,21 @@ a {
     padding: 25px;
   }
 }
-.footer__download {
+.footer__wrap {
   display: flex;
-  align-items: center;
+  justify-content: space-around;
 }
 @media (max-width: 767px) {
-  .footer__download {
+  .footer__wrap {
     display: block;
   }
 }
+.footer__download {
+  text-align: center;
+}
 .footer__download-text {
   font-size: 24px;
+  margin-bottom: 20px;
 }
 @media (max-width: 767px) {
   .footer__download-text {
@@ -206,7 +225,6 @@ a {
   display: inline-block;
   font-size: 24px;
   padding: 5px 20px;
-  margin-left: 50px;
   border: 1px solid currentColor;
   border-radius: 10px;
 }
@@ -217,7 +235,9 @@ a {
   }
 }
 .footer__download-link:hover {
-  box-shadow: 0 0 10px 0px;
+  color: #ccc;
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 /*# sourceMappingURL=style.css.map */

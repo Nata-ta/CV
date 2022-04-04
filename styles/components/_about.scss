@@ -41,9 +41,23 @@
         margin: 0 25px 25px 0;
 
         &-link {
+            display: inline-block;
+            color: $primary-color;
+            position: relative;
 
-            &:hover {
-                color: $primary-color;
+            &::before {
+                position: absolute;
+                content: '';
+                height: 2px;
+                width: 0;
+                top: 23px;
+                left: 0;
+                background-color: currentColor;
+                transition: $trs;
+            }
+
+            &:hover:before {
+                width: 100%;
             }
         }
     }

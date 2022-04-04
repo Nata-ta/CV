@@ -17,16 +17,22 @@
         padding: 25px;
     }
 
-    &__download {
+    &__wrap {
         display: flex;
-        align-items: center;
+        justify-content: space-around;
 
         @include b(mobile) {
             display: block;
         }
 
+    }
+
+    &__download {
+        text-align: center;
+
         &-text {
             font-size: 24px;
+            margin-bottom: 20px;
 
             @include b(mobile) {
                 margin-bottom: 30px;
@@ -38,7 +44,6 @@
             display: inline-block;
             font-size: 24px;
             padding: 5px 20px;
-            margin-left: 50px;
             border: 1px solid currentColor;
             border-radius: 10px;
 
@@ -48,7 +53,9 @@
             }
 
             &:hover {
-                box-shadow: 0 0 10px 0px;
+                color: $grey-color;
+                border-color: $light-gray-color;
+                box-shadow: 0 0 10px $light-gray-color;
             }
         }
     }

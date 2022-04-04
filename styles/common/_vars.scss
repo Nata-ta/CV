@@ -1,12 +1,16 @@
 $main-fz: 18px;
 $main-fw: 400;
 $main-lh: 1.6;
-$main-ff: 'Roboto', Arial, Helvetica, sans-serif;
+$main-ff: 'Roboto',
+Arial,
+Helvetica,
+sans-serif;
 
 $main-color: rgba(0, 0, 0, .6);
 $secondary-color: #373741;
 $primary-color: #5a996a;
 $grey-color: #ccc;
+$light-gray-color: rgba(255, 255, 255, .8);
 $transparant-color: rgba(255, 255, 255, .2);
 
 $trs: all .3s;
@@ -17,26 +21,33 @@ $tablet-width: 1024px;
 $desktop-width: 1366px;
 
 @mixin b($breakpoints) {
-  @if ($breakpoints == desktop) {
+  @if ($breakpoints==desktop) {
     @media (max-width: #{$desktop-width}) {
       @content
-      }
     }
-  @if ($breakpoints == tablet) {
+  }
+
+  @if ($breakpoints==tablet) {
     @media (max-width: #{$tablet-width}) {
       @content
     }
-  } @else if ($breakpoints == mobile) {
+  }
+
+  @else if ($breakpoints==mobile) {
     @media (max-width: #{$mobile-width}) {
       @content
     }
-  } @else if ($breakpoints == mobile-sm) {
+  }
+
+  @else if ($breakpoints==mobile-sm) {
     @media (max-width: #{$mobile-low}) {
       @content
     }
-  } @else {
+  }
+
+  @else {
     @media (max-width: $breakpoints + px) {
       @content
-      }
     }
+  }
 }
